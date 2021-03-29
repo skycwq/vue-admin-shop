@@ -82,6 +82,7 @@ export default {
     };
   },
   mounted() {
+    //判断当前是否在搜索页面
     if (this.$route.path !== "/home") {
       this.isShow = false;
     }
@@ -119,7 +120,11 @@ export default {
         if (this.$route.params) {
           location.params = this.$route.params;
         }
-        this.$router.push(location);
+        if(this.$route.path!=='/home'){
+          this.$router.replace(location)
+        }else {
+          this.$router.push(location)
+        }
       }
     },
     //鼠标移除全部分类时判断是否是home组件，如果不是就隐藏sort
@@ -174,8 +179,9 @@ export default {
       top: 45px;
       width: 210px;
       height: 461px;
-      position: absolute;
-      background: #fafafa;
+      // position: absolute;
+      // background-color: rgb(113, 243, 178, 0.712);
+      background: rgba(113, 243, 243, .3);
       z-index: 999;
       &.sort-enter {
         opacity: 0;

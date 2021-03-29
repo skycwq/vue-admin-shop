@@ -2,6 +2,11 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import home from './home'
 import user from './user'
+import search from './search'
+import detail from './detail'
+import addshopcart from './addshopcart'
+import trade from './trade'
+
 Vue.use(Vuex)
 
 const state={}
@@ -18,7 +23,7 @@ const store = new Vuex.Store({
     actions,
     getters,
     modules:{
-        home,user
+        home,user,search,detail,addshopcart,trade
     }
 })
 export default store
